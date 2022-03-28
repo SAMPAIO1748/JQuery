@@ -194,9 +194,16 @@
         // --------------------------------------- EVENEMENT BLUR => https://api.jquery.com/blur/
         // Lorsque nous allons cliquer ailleurs après avoir cliquer sur les élements ayant la classe "zone10", nous changerons leurs
         // background en rose.
-        $('.zone10').blur(function(){
+        $('.zone10').on("blur", function(){
             $(this).css("background", "DeepPink");
             $('#info').text("Je blur sur la zone 10");
+        })
+
+        // -------------------------------------- EVENEMENT CHANGE => https://api.jquery.com/change/
+        // Lorsque l'on va changer l'option de l'élément select qui a la classe zone11, nous changerons le background en or.
+        $(".zone11").on("change", function(){
+            $(this).css("background", "gold");
+            $("#info").text('je change l\'option dans le select de la zone 11');
         })
 
     </script>
