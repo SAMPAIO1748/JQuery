@@ -68,6 +68,17 @@
         console.log('monId : ' + monID); // j'affiche mon élément que j'ai selectionné dans la console.
         $(monID).css('color', 'red'); // je change la propriété css color de monID adonc de mon élément qui a l'id masection.
 
+        // ---------------------------- SELECTION CLASSE
+        var maClasse = $('.voiture'); // je sélectionne les éléments qui ont la classe voiture et les gardes en mémnoire dans une variable
+        console.log('maClasse : ' + maClasse); // j'affiche les éléments selectionnés dans la console.
+        $(maClasse).css('color', 'blue'); // je change la propriété css color de maClass donc des éléments qui on la classe voiture.
+        $('.voiture:first').css('color', 'green') // je change la propriété css color de mon premier élément.
+
+        // ---------------------------- SELECTION MULTIPLE
+        var mesElements = $('h1, article, aside'); // je selectionne différents éléments avec des balises HTML différentes : h1, article, aside
+        console.log('mesElements : ' + mesElements);// j'affiche les éléments selectionnés dans la console.
+        $(mesElements).css('color', 'orange') // je modifie la couleur css de mes élémenents.
+
     </script>
     
 </body>
