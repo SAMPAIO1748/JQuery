@@ -67,7 +67,7 @@
     <form method="post">
         <fieldset>
             <p class="titre">10 / BLUR - CLIQUER AILLEURS APRES AVOIR CLIQUER SUR CET ELEMENT (ZONE 10)</p>
-            <div class="zone10">zone 10</div>
+            <input type="text" name="prenom" class="zone10" placeholder="Zone 10">
         </fieldset>
 
         <fieldset>
@@ -180,6 +180,23 @@
         $(".zone8").on("dblclick", function(){
             $(this).css("background", "Red");
             $('#info').text("Je double clique sur la zone 8");
+        })
+
+        // --------------------------------------- EVENEMENT CLICK DROIT => https://api.jquery.com/contextmenu/
+        // Lorsque l'on clique droit sur les éléments ayant la classe "zone9", nous changerons leur background en vert.
+        $('.zone9').contextmenu(function(){
+            $(this).css("background", "LimeGreen");
+            $("#info").text('Je clique droit sur la zone 9');
+        })
+
+        // --------------------------------------- EVENEMENT CONCERNANT LE CLAVIER ----------//
+
+        // --------------------------------------- EVENEMENT BLUR => https://api.jquery.com/blur/
+        // Lorsque nous allons cliquer ailleurs après avoir cliquer sur les élements ayant la classe "zone10", nous changerons leurs
+        // background en rose.
+        $('.zone10').blur(function(){
+            $(this).css("background", "DeepPink");
+            $('#info').text("Je blur sur la zone 10");
         })
 
     </script>
