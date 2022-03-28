@@ -175,6 +175,13 @@
             $("#info").text("Je clique sur la zone 7");
         })
 
+        // --------------------------------------- EVENEMENT DBLCLICK => https://api.jquery.com/dblclick/
+        // Lorsque nous allons double cliquer sur les éléments ayant la classe "zone 8", nous changerons leur background en rouge
+        $(".zone8").on("dblclick", function(){
+            $(this).css("background", "Red");
+            $('#info').text("Je double clique sur la zone 8");
+        })
+
     </script>
 </body>
 </html>
