@@ -52,6 +52,23 @@
     <span>span</span>
 
     <div id="resultat">resultat ...</div>
+
+    <script>
+
+        // ---------------------------- SELECTION BALISE
+        // $ permet d'attraper un élément
+        var maBalise = $('span'); // Je sélectionne l'élément span et le garde en mémoire dans la variable maBalise.
+        console.log('ma balise : '+maBalise); // j'affiche l'élément que j'ai sélectionné dans la console.
+        $(maBalise).css('color', 'purple'); // je change la propriété css color de maBalise donc de mon élément span.
+
+        $('td:eq(2)').css("background", "brown"); // je selectionne l'élément TD #2 et je lui applique une propriété css background
+
+        // ---------------------------- SELECTION ID
+        var monID = $("#masection"); // je sélectionne l'élément qui a l'id masection et je le garde en mémoire dans la varibale nommée monID.
+        console.log('monId : ' + monID); // j'affiche mon élément que j'ai selectionné dans la console.
+        $(monID).css('color', 'red'); // je change la propriété css color de monID adonc de mon élément qui a l'id masection.
+
+    </script>
     
 </body>
 </html>
