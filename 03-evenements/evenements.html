@@ -168,6 +168,13 @@
             $('#info').text("Je pousse sur le bouton du clic gauche sur la zone 6");
         })
 
+        // ---------------------------------------- EVENEMENT ONCLICK => https://api.jquery.com/click/
+        // Lorsque nous allons cliquer sur les éléments ayant la classe "zone7", nous changerons leur background jaune.
+        $(".zone7").on("click", function(){
+            $(this).css('background', "yellow");
+            $("#info").text("Je clique sur la zone 7");
+        })
+
     </script>
 </body>
 </html>
