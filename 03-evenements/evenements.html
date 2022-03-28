@@ -120,7 +120,7 @@
         // Lorsque nous allons passer notre souris (mouseover) sur les élements ayant la classe zone1, nous changerons leur background en rouge.
         $('.zone1').on("mouseover", function(){
             $(this).css('background', 'IndianRed');
-            $('#info').text("je suis sur la zone 1");
+            $('#info').text("Je suis sur la zone 1");
         })
 
         // ---------------------------------------------- EVENEMENT MOUSMOVE => https://api.jquery.com/mousemove/
@@ -129,6 +129,13 @@
                 console.log(event) // event est un objet, on peut inspecter ses propriétés et ses méthodes
                 $(".zone2").text("pageX : " + event.pageX + ", pageY : " + event.pageY);
                 $('#info').text("Je suis sur la zone 2");
+        })
+
+        // ---------------------------------------------- EVENEMENT MOUSEOUT => https://api.jquery.com/mouseout/
+        // Lorsque nous allons quitter après avoir survoler la zone sur les éléments ayant la classe "zone3", nous changerons leur background en rouge.
+        $(".zone3").on("mouseout", function(){
+            $(this).css("background", 'tomato');
+            $('#info').text("Je suis dans la zone 3");
         })
 
     </script>
