@@ -77,7 +77,23 @@
         // ---------------------------- SELECTION MULTIPLE
         var mesElements = $('h1, article, aside'); // je selectionne différents éléments avec des balises HTML différentes : h1, article, aside
         console.log('mesElements : ' + mesElements);// j'affiche les éléments selectionnés dans la console.
-        $(mesElements).css('color', 'orange') // je modifie la couleur css de mes élémenents.
+        $(mesElements).css('color', 'orange') // je modifie la couleur css de mes élémenents.RE
+
+
+        // ---------------------------- RESUME DES PRINCIPAUX SELECTEURS
+
+            /*
+                selection de balise HTML : $("span")
+                selection d'un id : $('#id')
+                selection d'une classe : $('.classe')
+                selection d'un élément par lui-même : $(this)
+                selection d'un élément par sa balise et son type : $('input:text')
+                selection d'un élément par son type : $(':radio') (tous les types radio)
+                selection d'un élément par son attribut : $('img[alt]')
+                selection d'un élément par son attribut (tous les attributs) : $('[alt]')
+                selection d'un élément par le nom de l'attribut ET sa valeur : $("img[alt='roger']")
+                selection de plusieurs sélecteurs en même temps : $('h1, p, #id, .classe')
+            */
 
     </script>
     
