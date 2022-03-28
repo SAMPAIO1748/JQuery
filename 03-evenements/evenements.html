@@ -35,7 +35,7 @@
     </fieldset>
 
     <fieldset>
-        <p class="titre">4 / MOUSEENTER + MOUSELEAVE - ENTRER ER SORTIR DE LA ZONE 4</p>
+        <p class="titre">4 / MOUSEENTER + MOUSELEAVE - ENTRER ET SORTIR DE LA ZONE 4</p>
         <div class="zone4">zone 4</div>
     </fieldset>
 
@@ -136,6 +136,36 @@
         $(".zone3").on("mouseout", function(){
             $(this).css("background", 'tomato');
             $('#info').text("Je suis dans la zone 3");
+        })
+
+        // -------------------------------------------- EVENEMENT MOUSEENTER + MOUSELEAVE => https://api.jquery.com/mouseenter/ + https://api.jquery.com/mouseleave/
+        // Lorsque nous allons entrer et sortir de la zone ayant la classe "zone4", nous changerons leur background en orange et vert.
+        $('.zone4').on("mouseenter", function(){
+            $(this).css("background", "DarkOrange");
+            $("#info").text("Je rentre dans la zone 4");
+        });
+
+        $('.zone4').on("mouseleave", function(){
+            $(this).css("background", "ForestGreen");
+            $('#info').text("Je sors de la zone 4");
+        })
+
+        // ------------------------------------------- EVENEMEMENT CONCERNANT LE CLIC ------------------------- //
+
+
+        // ------------------------------------------EVENEMENT MOUSEUP => https://api.jquery.com/mouseup/
+        // Lorsque nous allons pressez pendant quelques secondes le clic gauche et le relacher sur les éléments ayant la classe "zone5", 
+        // nous changerons leur background en jaune
+        $(".zone5").on('mouseup', function(){
+            $(this).css("background", "YellowGreen");
+            $('#info').text("Je relâche le clic sur la zone 5");
+        })
+
+        // ---------------------------------------- EVENEMENT MOUSEDOWN => https://api.jquery.com/mousedown/
+        // Lorsque nous allons enfoncez le bouton du clic sur les éléments ayant la classe "zone6", nous changerons leur background en violet
+        $(".zone6").on('mousedown', function(){
+            $(this).css("background", "Indigo");
+            $('#info').text("Je pousse sur le bouton du clic gauche sur la zone 6");
         })
 
     </script>
