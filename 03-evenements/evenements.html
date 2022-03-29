@@ -11,7 +11,7 @@
         fieldset{margin: 30px 0;}
         #info{position: fixed; background : #454545; color : #fff; top : 0; width: 100%; display: block; padding: 5px; margin-bottom: 30px;}
         .titre{ font-weight: bold; padding: 10px; margin : 10px;}
-        .zone1, .zone2, .zone3, .zone4, .zone5, .zone6, .zone7, .zone8, .zone9,.zone10, .zone11, .zon12{background : lightskyblue; padding : 20px; margin : 20px;}
+        .zone1, .zone2, .zone3, .zone4, .zone5, .zone6, .zone7, .zone8, .zone9,.zone10, .zone11, .zone12{background : lightskyblue; padding : 20px; margin : 20px;}
         input, textarea, select{width: 100%; padding: 5px;}
     </style>
 </head>
@@ -81,7 +81,7 @@
         </fieldset>
 
         <fieldset>
-            <p class="titre">12 / KEYDOW + KEYUP - APPUYER ET RELACHER UNE TOUCHE DU CLAVIER (ZONE 12)</p>
+            <p class="titre">12 / KEYDOWN + KEYUP - APPUYER ET RELACHER UNE TOUCHE DU CLAVIER (ZONE 12)</p>
             <textarea name="commentaire" class="zone12" cols="30" rows="10" placeholder="commentaire"></textarea>
         </fieldset>
     </form>
@@ -201,10 +201,20 @@
 
         // -------------------------------------- EVENEMENT CHANGE => https://api.jquery.com/change/
         // Lorsque l'on va changer l'option de l'élément select qui a la classe zone11, nous changerons le background en or.
-        $(".zone11").on("change", function(){
+        $(".zone11").change(function(){
             $(this).css("background", "gold");
             $("#info").text('je change l\'option dans le select de la zone 11');
         })
+
+        // -------------------------------------- EVENEMENT KEYDOWN => https://api.jquery.com/keydown/
+        // Lorsque nous allons appuyer sur une touche de notre clavier sur l'élément qui a la classe zone12, 
+        // nous allons changer son background en bleu foncé
+        $('.zone12').on('keydown', function(){
+            $(this).css("background", "navy");
+            $('#info').text("J'appuie sur une touche du clavier dans la zone 12.");
+        })
+
+
 
     </script>
 </body>
