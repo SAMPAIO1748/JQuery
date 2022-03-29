@@ -223,6 +223,15 @@
         })
 
 
+        // ---------------------------------- EVENEMENT DIVERS ----------------------------------------- //
+        // ---------------------------------EVENEMENT SCROLL => https://api.jquery.com/scroll/
+        // Lorsque nous allons scroller la page, nous allons changer le background de l'élément qui a l'id info en vert
+        $(window).on('scroll', function(){
+            $('#info').css('background', "SpringGreen");
+            $('#info').text("Je scrolle");
+        })
+
+
 
     </script>
 </body>
