@@ -11,6 +11,7 @@
         .droite{width : 120%; min-height: 300px;}
         .droite img{ border: 2px solid;}
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <p>Lors d'un clic sur une image à droite, l'image à gauche change et devient l'image sur laquelle on a cliqué</p>
@@ -31,6 +32,20 @@
             <img src="10.jpg" alt="mon image" title="mon image 10" width="120px">
         </div>
     </div>
+
+<script>
+
+    $(document).ready(function(){
+        $('.droite img').on("click", function(){
+            var MonImage = $(this).attr('src'); // Récupération
+            var MonTitle = $(this).attr('title');// Récupération
+
+            $('.gauche img').attr('src', MonImage); // changement
+            $('.gauche img').attr('title', MonTitle); // changement
+        })
+    })
+
+</script>
     
 </body>
 </html>
