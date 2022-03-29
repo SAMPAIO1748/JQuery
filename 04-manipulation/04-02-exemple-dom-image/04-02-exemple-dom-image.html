@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> 1 - EXEMPLE IMAGE : LORSQUE JE CLIQUE SUR L'IMAGE, CELLE-CI DOIT CHANGER</h1>
+    <h1> 2 - EXERCICE IMAGE : LORSQUE JE DOUBLECLIQUE SUR L'IMAGE, CELLE-CI DOIT PRENDRE UNE TAILLE DE 70% ET LES H1 DOIVENT DISPARAÎTRE OU ÊTRE SUPPRIME</h1>
+    <br><br>
+    <img src="2.jpg" alt="image" title="mon image" class="zone1" width="300">
+
+    <script>
+        $(document).ready(function(){
+            console.log('document chargé');
+
+            $(".zone1").on('click', function(){
+                $(this).attr("src", "3.jpg");
+            })
+        })
+    </script>
+    
+</body>
+</html>
