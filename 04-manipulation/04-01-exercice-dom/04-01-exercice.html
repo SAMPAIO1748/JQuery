@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
     <style>
         body{margin: 0; font-family: Verdana, Geneva, Tahoma, sans-serif;}
@@ -16,7 +17,7 @@
     <h1>Exercice DOM</h1>
     <br><br>
     <fieldset>
-        <p class="titre">EXERCICE 1 - LORSQUE JE CLIQUE SUR LA ZONE 1? LE TITRE H1 DOIT SE METTRE EN VERT, AU CENTRE ET AVOIR UNE TAILLE DE 80px</p>
+        <p class="titre">EXERCICE 1 - LORSQUE JE CLIQUE SUR LA ZONE 1 LE TITRE H1 DOIT SE METTRE EN VERT, AU CENTRE ET AVOIR UNE TAILLE DE 80px</p>
         <div class="zone1">Zone 1</div>
     </fieldset>
 
@@ -26,7 +27,7 @@
     </fieldset>
 
     <fieldset>
-        <p class="titre">EXERCICE 3 - LORSQUE JE CLIQUE SUR LE BOUTON SUBMIT LEE BACKGROUND DE LA PAGE CHANGE DE COULEUR </p>
+        <p class="titre">EXERCICE 3 - LORSQUE JE CLIQUE SUR LE BOUTON SUBMIT LE BACKGROUND DE LA PAGE CHANGE DE COULEUR </p>
         <form action="" method="post">
             <input type="submit" value="Valider zone 3" class="zone3">
         </form>
@@ -60,11 +61,57 @@
     </fieldset>
 
     <fieldset>
-        <p class="titre">EXERCIE 7 - LORSQUE JE CLIQUE SUR LA ZONE 7, LE BACKGROUND PASSE EN JEUNE? SAUF POUR L'ELEMENT CLIQUE QUI PASSE EN VERT</p>
+        <p class="titre">EXERCIE 7 - LORSQUE JE CLIQUE SUR LA ZONE 7, LE BACKGROUND PASSE EN JAUNE SAUF POUR L'ELEMENT CLIQUE QUI PASSE EN VERT</p>
         <div class="zone7">Zone 7</div>
         <div class="zone7">Zone 7</div>
         <div class="zone7">Zone 7</div>
     </fieldset>
+
+    <script>
+        $(document).ready(function(){
+            console.log('document chargé');
+
+            $('.zone1').on("click", function(){
+                $('h1').css({"color": "green", "text-align": "center", "font-size": "80px"});
+            })
+
+            $('.zone2').click(function(){
+                $("body").css('background', 'tomato');
+            })
+
+            $('.zone3').click(function(event){
+                event.preventDefault(); // permet de ne pas recharger la page et d'annuler le comportement par défaut du submit qui est censé recharger la page
+                $('body').css("background", "navy");
+            })
+
+            $('.zone4-submit').on("click", function(event){
+                event.preventDefault();
+                var maCouleur = $(".zone4").val() // récupération de la valeur de la zone 4
+                console.log(maCouleur);
+                $(".zone4-submit").css("background", maCouleur);
+            })
+
+            $('.zone5-submit').on('click', function(event){
+                event.preventDefault();
+                var maCouleur2 = $(".zone5").find("option:selected").text() // récupération de la valeur selectionnée du select.
+                // find() permet de chercher l'option selectd et .text() permet de récupérer le texte contenu dans l'option
+                console.log(maCouleur2);
+                $(".zone5-submit").css("background", maCouleur2);
+            })
+
+            $(".zone6").on('click', function(){
+                $('.zone6').css("background", "yellow");
+            })
+
+            $('.zone7').click(function(){
+                $('.zone7').css('background', "yellow"); // cela pointe vers toutes les zones 7
+                $(this).css("background", "green"); // THIS pointe uniquement l'élément cliqué
+            })
+
+
+
+        })
+    </script>
     
 </body>
 </html>
